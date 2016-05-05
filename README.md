@@ -37,9 +37,8 @@ Balance hp and damage values
 #####Changelog:
 Version | Description
 ---|---
-v0.1.1 | Fixed visual bug where the power level displayed on screen did not reset back to level 1 when retrying the game. 
-Added autofire toggle using the "a" button.
-v0.1.0 | First upload to github, most of the engine is working fine and the game is playable, but is unbalanced. Missing blue power.
+v0.1.1 | Fixed visual bug where the power level displayed on screen did not reset back to level 1 when retrying the game. <br>Added autofire toggle using the "a" button.
+v0.1.0 | First upload to github, most of the engine is working fine and the game is playable, but is unbalanced. <br>Missing blue power.
 
 
 #####Preview:
