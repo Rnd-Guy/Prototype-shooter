@@ -1,6 +1,7 @@
 # Prototype-shooter
 A one-stage boss shooter where you upgrade your weapons by shooting at different parts of the boss.  
-Created using visual studio 2015 and SFML 2.3.2.
+Created using visual studio 2015 and SFML 2.3.2. (http://www.sfml-dev.org/)  
+(SFML library required to compile the game)
 
 #####Controls:
 Arrow keys to move  
@@ -19,12 +20,24 @@ Feature | Description | Progress
 Gamestates|Seperate the game state with the main menu and be able to switch between them freely|100%
 Pause|Be able to pause the game|100%
 Retry|Be able to start over|100%
-Player|Player sprites, lives, shooting, collisions and movement|70% - missing gameover screen and blue power
-Boss|Boss sprites, life, shooting, collisions and possibly movement|50% - missing blue power and beam collisions and shooting patterns
-Powers|Red, yellow and blue powers for boss and player|66% - missing blue power
+Player|Player sprites, lives, shooting, collisions and movement|70% 
+Boss|Boss sprites, life, shooting, collisions and possibly movement|50% 
+Powers|Red, yellow and blue powers for boss and player|66% 
 Bullets|Bullet mechanics and collisions|100%
-Beams|Laser beam mechanics and collisions|75% - add collisions for the player's beams
+Beams|Laser beam mechanics and collisions|75%
 
+#####To-do list:
+Add blue power  
+Fix player beam collisions  
+Add a game-over screen when the player runs out of lives  
+Add boss shooting patterns  
+Balance hp and damage values
 
+#####Changelog:
+Version | Description
+---|---
+v0.1.0: First upload to github, most of the engine is working fine and the game is playable, but is unbalanced. Missing blue power.
+
+#####Preview:
 
 
