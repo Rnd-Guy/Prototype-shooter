@@ -26,6 +26,7 @@ Boss|Boss sprites, life, shooting, collisions and possibly movement|50%
 Powers|Red, yellow and blue powers for boss and player|66% 
 Bullets|Bullet mechanics and collisions|100%
 Beams|Laser beam mechanics and collisions|75%
+Blue power|Haven't come up with one yet|0%
 
 #####To-do list:
 Add blue power  
@@ -42,6 +43,10 @@ v0.1.0 | First upload to github, most of the engine is working fine and the game
 
 
 #####Preview:
+![Main menu](/Preview Pictures/Main Menu.PNG)  
+Main menu  
 
+![Sample play](/Preview Pictures/Sample Play.PNG)  
+Screenshot of sample play
 
 
