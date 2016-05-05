@@ -38,7 +38,11 @@ void PlayState::handleInput()
 			if (event.key.code == sf::Keyboard::Escape) {
 				changeGameState(Game::pause);
 			}
+			if (event.key.code == sf::Keyboard::A) {
+				player.autofire();
+			}
 			break;
+		
 		default:
 			break;
 		}
@@ -58,7 +62,7 @@ void PlayState::handleInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 		player.moveDown();
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || player.getAutofire() == true) {
 		player.shoot();
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) {

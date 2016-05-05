@@ -77,6 +77,7 @@ Player::Player(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &
 	playerHitbox.setOrigin(5, 5);
 	hitboxVisible = false;
 	hitBoxRadius = 6;
+	autofireOn = false;
 }
 
 void Player::reset() {
@@ -96,6 +97,9 @@ void Player::reset() {
 	redTimer = 0;
 	blueTimer = 0;
 	yellowTimer = 0;
+	redLevelText.setString("1");
+	blueLevelText.setString("1");
+	yellowLevelText.setString("1");
 }
 
 void Player::moveUp() {
@@ -283,7 +287,7 @@ void Player::blueShoot() {
 
 void Player::yellowShoot() {
 	if (yellowTimer == 0) {
-		if (yellowLevel >= 1) {
+		if (yellowLevel >= 2) {
 			beams.push_back(std::make_unique<Beam>(window, "player", 1, "dir", x, y, 0, 30, 0, 0, 0, 0, 0, "follow", this));
 
 
@@ -298,4 +302,13 @@ void Player::yellowShoot() {
 	}
 
 
+}
+
+void Player::autofire() {
+	if (autofireOn) autofireOn = false;
+	else autofireOn = true;
+}
+
+bool Player::getAutofire() {
+	return autofireOn;
 }

@@ -16,7 +16,7 @@ Beam::Beam(sf::RenderWindow* window, std::string playerOrBoss, double damage, st
 	chargeTimer = chargeTime;
 	beamDuration = duration;
 
-	showHitbox = true; 
+	showHitbox = false; // mostly for debug purposes
 
 	active = false;
 	hit = false;

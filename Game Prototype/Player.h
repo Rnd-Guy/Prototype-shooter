@@ -20,6 +20,8 @@ public:
 	void redShoot();
 	void blueShoot();
 	void yellowShoot();
+	void autofire();
+	bool getAutofire();
 
 
 	void update();
@@ -47,6 +49,7 @@ private:
 	sf::FloatRect rectHitbox; // sometimes used for easier hitbox calculations
 	ResourceComponent resourceComponent;
 	sf::RenderWindow* window;
+	bool autofireOn;
 
 	int lives;
 	sf::Sprite life1;

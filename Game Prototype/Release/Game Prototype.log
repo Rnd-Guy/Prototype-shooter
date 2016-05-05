@@ -1,47 +1,14 @@
-﻿  BasicPlayerBullet.cpp
-  Beam.cpp
-Beam.cpp(145): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-Beam.cpp(145): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Beam.cpp(150): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Beam.cpp(173): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Beam.cpp(174): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Beam.cpp(175): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Beam.cpp(185): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-Beam.cpp(192): warning C4018: '<': signed/unsigned mismatch
-Beam.cpp(201): warning C4018: '<': signed/unsigned mismatch
-Beam.cpp(221): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Boss.cpp
+﻿  Boss.cpp
 Boss.cpp(50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 Boss.cpp(51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 Boss.cpp(52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 Boss.cpp(53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 Boss.cpp(54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 Boss.cpp(62): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Bullet.cpp
-Bullet.cpp(127): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Game.cpp
-  Player.cpp
-Player.cpp(152): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Player.cpp(153): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Player.cpp(155): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Player.cpp(156): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-Player.cpp(157): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Player.cpp(158): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-Player.cpp(159): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Player.cpp(160): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-Player.cpp(175): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  PlayState.cpp
-PlayState.cpp(76): warning C4018: '<': signed/unsigned mismatch
-PlayState.cpp(121): warning C4018: '<': signed/unsigned mismatch
-PlayState.cpp(128): warning C4018: '<': signed/unsigned mismatch
-PlayState.cpp(144): warning C4018: '<': signed/unsigned mismatch
-PlayState.cpp(160): warning C4018: '<': signed/unsigned mismatch
-PlayState.cpp(163): warning C4018: '<': signed/unsigned mismatch
-  ResourceComponent.cpp
   Generating code
-  1160 of 1160 functions (100.0%) were compiled, the rest were copied from previous compilation.
-    573 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  1 of 1160 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Game Prototype.vcxproj -> C:\Users\Jack Ngo\Desktop\Coding\Visual Studio Projects\Game Prototype\Release\Game Prototype.exe
   Game Prototype.vcxproj -> C:\Users\Jack Ngo\Desktop\Coding\Visual Studio Projects\Game Prototype\Release\Game Prototype.pdb (Full PDB)

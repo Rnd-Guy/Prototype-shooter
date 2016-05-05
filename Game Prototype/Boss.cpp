@@ -153,7 +153,9 @@ void Boss::redShoot() {
 			//bullets.push_back(std::make_unique<Bullet>(window, "Boss", 1, "target", 100, 270, 5, player->getX(), player->getY(), 0, 0, 225));
 			//bullets.push_back(std::make_unique<Bullet>(window, "Boss", 1, "target", 100, 270, 5, player->getX(), player->getY(), 0, 0, 270));
 			//bullets.push_back(std::make_unique<Bullet>(window, "Boss", 1, "target", 100, 270, 5, player->getX(), player->getY(), 0, 0, 315));
-			
+			bullets.push_back(std::make_unique<Bullet>(window, "Boss", 1, "target", 500, 270, 5, player->getX(), player->getY()));
+			bullets.push_back(std::make_unique<Bullet>(window, "Boss", 1, "target", 500, 270, 5, player->getX(), player->getY(), 0, 0, 30));
+			bullets.push_back(std::make_unique<Bullet>(window, "Boss", 1, "target", 500, 270, 5, player->getX(), player->getY(), 0, 0, -30));
 		}
 
 		if (redTimer % 30 == 0) {
@@ -176,10 +178,11 @@ void Boss::blueShoot() {
 
 void Boss::yellowShoot() {
 	// left laser spawn = 245,330
+	// right laser spawn = 355,330
 	// beam constructor: (window, playerOrBoss, damage, type, x, y, chargeTime, duration, param1, param2, param3, param4, param5)
-	if (yellowTimer % 600 == 0) {
-		//beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 245, 330, 120, 300, 180));
-		//beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 355, 330, 10, 180));
+	if (yellowTimer % 300 == 0) {
+		beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 245, 330, 120, 600, 180));
+		beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 355, 330, 120, 600, 180));
 
 	}
 
@@ -187,7 +190,7 @@ void Boss::yellowShoot() {
 		//beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "target", 245, 330, 120, 180, player->getX(), player->getY()));
 	}
 	if (yellowTimer == 10) {
-		beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 245, 330, 0, 999999, 180));
+		//beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 245, 330, 0, 999999, 180));
 	}
 
 
