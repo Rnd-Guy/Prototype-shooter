@@ -36,7 +36,7 @@ Balance hp and damage values
 #####Changelog:
 Version | Description
 ---|---
-v0.1.0: First upload to github, most of the engine is working fine and the game is playable, but is unbalanced. Missing blue power.
+v0.1.0 | First upload to github, most of the engine is working fine and the game is playable, but is unbalanced. Missing blue power.
 
 #####Preview:
 
