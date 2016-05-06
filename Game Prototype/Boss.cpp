@@ -181,8 +181,8 @@ void Boss::yellowShoot() {
 	// right laser spawn = 355,330
 	// beam constructor: (window, playerOrBoss, damage, type, x, y, chargeTime, duration, param1, param2, param3, param4, param5)
 	if (yellowTimer % 300 == 0) {
-		beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 245, 330, 120, 600, 180));
-		beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 355, 330, 120, 600, 180));
+		beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 245, 330, 120, 240, 180));
+		beams.push_back(std::make_unique<Beam>(window, "Boss", 1, "direction", 355, 330, 120, 240, 180));
 
 	}
 

@@ -77,6 +77,7 @@ void PausedState::update() {
 void PausedState::render() {
 
 	playStatePointer->render(); // draw play area in the background
+
 	window->draw(greyTint);
 	window->draw(pauseMenu);
 	window->draw(selectionRectangle);
