@@ -43,8 +43,6 @@ v0.1.0 | First upload to github, most of the engine is working fine and the game
 
 
 #####Preview:
-![Main menu](/Preview Pictures/Main Menu.PNG)  
-Main menu  
 
 ![Sample play](/Preview Pictures/Sample Play.PNG)  
 Screenshot of sample play
