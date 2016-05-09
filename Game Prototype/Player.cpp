@@ -260,21 +260,21 @@ void Player::damageYellow(double damageOfBullet) {
 void Player::redShoot() {
 	if (redTimer == 0) {
 		if (redLevel == 1 || redLevel >= 3) {
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 1, "dir", x, y - 10, 5, 0));
+			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x, y - 10, 5, 0));
 		}
 		if (redLevel >= 2) {
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 1, "dir", x - 5, y - 6, 5, 0));
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 1, "dir", x + 5, y - 6, 5, 0));
+			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x - 5, y - 6, 5, 0));
+			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x + 5, y - 6, 5, 0));
 		}
 		if (redLevel >= 3) {
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 1, "dir", x, y - 10, 5, 30));
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 1, "dir", x, y - 10, 5, -30));
+			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x, y - 10, 5, 30));
+			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x, y - 10, 5, -30));
 		}
 		if (redLevel >= 4) {
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 1, "dir", x - 10, y, 5, 0));
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 1, "dir", x + 10, y, 5, 0));
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 1, "dir", x, y - 10, 5, 15));
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 1, "dir", x, y - 10, 5, -15));
+			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x - 10, y, 5, 0));
+			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x + 10, y, 5, 0));
+			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x, y - 10, 5, 15));
+			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x, y - 10, 5, -15));
 		}
 
 		redTimer = 10;

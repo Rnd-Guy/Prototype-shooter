@@ -196,11 +196,22 @@ void Beam::render() {
 	
 }
 
-bool Beam::checkCollision(sf::FloatRect otherHitbox) {
+bool Beam::checkCollision(sf::FloatRect otherHitbox, int specificIndex) {
 	if (active) {
-		for (auto i = 0; i < hitboxes.size(); ++i) {
-			if (otherHitbox.intersects(hitboxes[i])) {
-				collision(i);
+		if (specificIndex == -1) {
+			for (int i = 0; i < hitboxes.size(); ++i) {
+				if (otherHitbox.intersects(hitboxes[i])) {
+					collision(i);
+					return true;
+				}
+			}
+		}
+		if (specificIndex >= hitboxes.size() || specificIndex < 0) {
+			return false;
+		}
+		else {
+			if (otherHitbox.intersects(hitboxes[specificIndex])) {
+				collision(specificIndex);
 				return true;
 			}
 		}
@@ -242,4 +253,8 @@ void Beam::updateBehaviour(std::string presetBehaviour) {
 	}
 
 
+}
+
+int Beam::getHitboxVectorSize() {
+	return hitboxes.size();
 }

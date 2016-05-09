@@ -105,6 +105,8 @@ void PlayState::update()
 
 
 		}
+
+
 		// check for player collisions using distance for more precision
 		if (bullets[i]->damagePlayer) {
 			if (bullets[i]->getDistanceFromPoint(player.getX(), player.getY()) < bullets[i]->getRadius() + player.getHitBoxRadius()) {
@@ -132,7 +134,31 @@ void PlayState::update()
 	for (auto i = 0; i < beams.size(); ++i) {
 		beams[i]->update();
 		// check for boss collisions
-		// to be done later
+		if (beams[i]->damageBoss) {
+			int hitboxVectorSize = beams[i]->getHitboxVectorSize();
+			for (int j = 0; j < hitboxVectorSize; ++j) {
+				// damage blue
+				if (beams[i]->checkCollision(boss.getBlueHitBox(), j)) {
+					boss.damageBlue(beams[i]->damage);
+					player.damageBlue(beams[i]->damage);
+					break;
+				}
+				// damage red
+				if (beams[i]->checkCollision(boss.getRedLeftHitBox(), j) ||
+					beams[i]->checkCollision(boss.getRedRightHitBox(), j)) {
+					boss.damageRed(beams[i]->damage);
+					player.damageRed(beams[i]->damage);
+					break;
+				}
+				if (beams[i]->checkCollision(boss.getYellowLeftHitBox(), j) ||
+					beams[i]->checkCollision(boss.getYellowRightHitBox(), j)) {
+					boss.damageYellow(beams[i]->damage);
+					player.damageYellow(beams[i]->damage);
+					break;
+				
+				}
+			}
+		}
 
 
 		// check for player collisions, using player's recthitbox
@@ -156,6 +182,7 @@ void PlayState::update()
 
 }
 
+
 void PlayState::render()
 {
 
@@ -169,15 +196,12 @@ void PlayState::render()
 	}
 	boss.render();
 	player.renderGame();
-	// bullets
-
-
 
 	// overlay layer
 	window->draw(orangeOverlay);
 	player.renderOverlay();
-
 }
+
 
 void PlayState::enter(std::string string)
 {

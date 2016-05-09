@@ -39,13 +39,13 @@ public:
 	void render();
 	
 
-	bool checkCollision(sf::FloatRect otherHitbox); // if no collision, returns -1, else returns the index of the hitbox that it collides with
+	bool checkCollision(sf::FloatRect otherHitbox, int specificIndex=-1); // if no specific index, will check all indices
 	void collision(int hitboxIndex); // index of hitbox which collides with player/boss
 	void calculateLengthOfBeam(int hitboxIndex); // if collided, shorten the beam to end at the collision
 
 	void changeDirection(double newDirection);
 
-
+	int getHitboxVectorSize();
 
 
 private:

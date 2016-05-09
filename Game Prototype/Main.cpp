@@ -8,6 +8,7 @@
 //}
 
 int main() {
+	
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Game Prototype");
 	window.setFramerateLimit(60);
 	Game game(&window);

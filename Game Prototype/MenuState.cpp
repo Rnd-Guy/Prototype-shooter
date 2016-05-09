@@ -56,6 +56,7 @@ void MenuState::update() {
 	}
 }
 
+
 void MenuState::render() {
 
 	window->draw(background);
