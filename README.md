@@ -12,7 +12,7 @@ Escape to pause/unpause
 #####Features:
 A red/yellow/blue power bar system where you get stronger depending on which part of the boss you shoot!  
 Higher red power lets you shoot more bullets,  
-Higher yellow power lets you shoot more laser beams.  
+Higher yellow power lets you shoot more laser beams,  
 (Blue power does not do anything right now).  
 
 #####Feature progress:
@@ -21,23 +21,24 @@ Feature | Description | Progress
 Gamestates|Seperate the game state with the main menu and be able to switch between them freely|100%
 Pause|Be able to pause the game|100%
 Retry|Be able to start over|100%
-Player|Player sprites, lives, shooting, collisions and movement|70% 
-Boss|Boss sprites, life, shooting, collisions and possibly movement|50% 
+Player|Player sprites, lives, shooting, collisions and movement|75% 
+Boss|Boss sprites, life, shooting, collisions and possibly movement|60% 
 Powers|Red, yellow and blue powers for boss and player|66% 
 Bullets|Bullet mechanics and collisions|100%
-Beams|Laser beam mechanics and collisions|75%
+Beams|Laser beam mechanics and collisions|100%
 Blue power|Haven't come up with one yet|0%
 
 #####To-do list:
 Add blue power  
-Fix player beam collisions  
 Add a game-over screen when the player runs out of lives  
 Add boss shooting patterns  
-Balance hp and damage values
+Balance hp and damage values  
+[Release build only] Find out why the pause menu sometimes doesn't appear on the screen when building the release build
 
 #####Changelog:
 Version | Description
 ---|---
+v0.1.2 | Fixed player beams not colliding with the boss or dealing damage.
 v0.1.1 | Fixed visual bug where the power level displayed on screen did not reset back to level 1 when retrying the game. <br>Added autofire toggle using the "a" button.
 v0.1.0 | First upload to github, most of the engine is working fine and the game is playable, but is unbalanced. <br>Missing blue power.
 
