@@ -1,5 +1,6 @@
 # Prototype-shooter
-A one-stage boss shooter where you upgrade your weapons by shooting at different parts of the boss.  Currently in development.  
+A one-stage boss shooter where you upgrade your weapons by shooting at different parts of the boss.  
+Currently in development.  
 Created using visual studio 2015 and SFML 2.3.2. (http://www.sfml-dev.org/)  
 
 #####Folders:
