@@ -48,7 +48,7 @@ void PlayState::handleInput()
 		}
 	}
 
-	
+	player.storePreviousPosition();
 	// polling based input
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 		player.moveLeft();

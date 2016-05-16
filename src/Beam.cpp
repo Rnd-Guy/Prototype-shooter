@@ -54,6 +54,7 @@ void Beam::initialise() {
 void Beam::calculatePath(std::string type, double param1, double param2, double param3, double param4, double param5) {
 	// direction
 	if (type == "d" || type == "dir" || type == "direction") {
+		
 		direction = param1;
 		directionOffset = param2;
 
@@ -166,8 +167,6 @@ void Beam::update() {
 			--chargeTimer;
 		}
 	}
-
-	//changeDirection(direction+1);
 	updateBehaviour(behaviour);
 
 	beamSprite.setPosition(hitboxPoints[0][0], hitboxPoints[0][1]);
@@ -206,7 +205,7 @@ bool Beam::checkCollision(sf::FloatRect otherHitbox, int specificIndex) {
 				}
 			}
 		}
-		if (specificIndex >= hitboxes.size() || specificIndex < 0) {
+		else if (specificIndex >= hitboxes.size() || specificIndex < -1) {
 			return false;
 		}
 		else {
@@ -246,18 +245,29 @@ void Beam::updateBehaviour(std::string presetBehaviour) {
 
 	if (presetBehaviour == "follow") {
 		// currently hardcoded, possibly generalise later
-		x = player->getX();
-		y = player->getY() - 10;
+
+
+		x += (player->getX() - player->getPreviousX());
+		y += (player->getY() - player->getPreviousY());
 		calculatePath("direction", direction);
-		// changeDirection(direction + 1);
+
 	}
 	if (presetBehaviour == "followClockwise") {
 		// also hardcoded, possibly generalise later
 		x = player->getX();
 		y = player->getY() - 10;
-		calculatePath("direction", direction);
-		changeDirection(direction + 1);
+		changeDirection(direction + 1); // calculatePath is included in this function
 	}
+	if (presetBehaviour == "slowClockwise") {
+		changeDirection(direction + 0.1);
+	}
+	if (presetBehaviour == "slowAntiClockwise") {
+		changeDirection(direction - 0.1);
+	}
+
+
+
+
 
 
 }

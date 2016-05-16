@@ -4,6 +4,11 @@
 #include "PlayState.h"
 #include "PausedState.h"
 
+
+
+
+
+
 Game::Game(sf::RenderWindow* window) {
 	this->window = window;
 	//menuState(this, window);
@@ -62,12 +67,10 @@ void Game::render() {
 
 void Game::terminate() {
 	gameRunning = false;
-
 	for (auto i = 0; i < 3; ++i) {
 		(*gameStateVector[i]).terminate();
 	}
 		
 	window->close();
-
 	
 }

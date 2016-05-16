@@ -34,6 +34,9 @@ public:
 
 	double getX();
 	double getY();
+	double getPreviousX();
+	double getPreviousY();
+	void storePreviousPosition(); // update previousX and previousY
 	double getHitBoxRadius();
 	sf::FloatRect getRectHitbox();
 
@@ -44,6 +47,8 @@ public:
 private:
 	double x;
 	double y;
+	double previousX;
+	double previousY;
 	double hitBoxRadius;
 	double speed;
 	bool hitboxVisible;

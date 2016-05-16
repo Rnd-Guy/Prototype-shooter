@@ -83,6 +83,8 @@ Player::Player(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &
 void Player::reset() {
 	x = 300;
 	y = 550;
+	previousX = 300;
+	previousY = 550;
 	speed = 2; // pixels per frame
 	redExp = 0;
 	blueExp = 0;
@@ -276,10 +278,17 @@ void Player::redShoot() {
 			fire("bullet", 5, "dir", x, y - 10, 5, -30);
 		}
 		if (redLevel >= 4) {
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x - 10, y, 5, 0));
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x + 10, y, 5, 0));
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x, y - 10, 5, 15));
-			bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x, y - 10, 5, -15));
+			//bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x - 10, y, 5, 0));
+			//bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x + 10, y, 5, 0));
+			//bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x, y - 10, 5, 15));
+			//bullets.push_back(std::make_unique<Bullet>(window, "player", 5, "dir", x, y - 10, 5, -15));
+
+			fire("bullet", 5, "dir", x - 10, y, 5, 0);
+			fire("bullet", 5, "dir", x + 10, y, 5, 0);
+			fire("bullet", 5, "dir", x, y - 10, 5, 15);
+			fire("bullet", 5, "dir", x, y - 10, 5, -15);
+
+
 		}
 
 		redTimer = 10;
@@ -292,21 +301,30 @@ void Player::blueShoot() {
 
 void Player::yellowShoot() {
 	if (yellowTimer == 0) {
-		if (yellowLevel >= 2) {
+		if (yellowLevel == 2 || yellowLevel >= 4) {
 			//beams.push_back(std::make_unique<Beam>(window, "player", 1, "dir", x, y, 0, 30, 0, 0, 0, 0, 0, "follow", this));
 			fire("beam", 1, "dir", x, y - 10, 30, 0, 0, 0, 0, 0, "follow");
 
 
 		}
+		if (yellowLevel == 3) {
+			fire("beam", 1, "dir", x - 5, y-5, 30, 0, 0,0, 0, 0, "follow");
+			fire("beam", 1, "dir", x + 5, y-5, 30, 0, 0,0, 0, 0, "follow");
+		}
+		if (yellowLevel >= 4) {
+			fire("beam", 1, "dir", x - 10, y - 5, 30, 0, 0, 0, 0, 0, "follow");
+			fire("beam", 1, "dir", x + 10, y - 5, 30, 0, 0, 0, 0, 0, "follow");
+		}
+
 		if (yellowLevel == 5) {
 			static bool beamLevel5 = false; // will only be initialised once
-			if (beamLevel5 == false) {
-				fire("beam", 1, "dir", "center", 999999, 0, 0, 0, 0, 0, "followClockwise");
-				fire("beam", 1, "dir", "center", 999999, 60, 0, 0, 0, 0, "followClockwise");
-				fire("beam", 1, "dir", "center", 999999, 120, 0, 0, 0, 0, "followClockwise");
-				fire("beam", 1, "dir", "center", 999999, 180, 0, 0, 0, 0, "followClockwise");
-				fire("beam", 1, "dir", "center", 999999, 240, 0, 0, 0, 0, "followClockwise");
-				fire("beam", 1, "dir", "center", 999999, 300, 0, 0, 0, 0, "followClockwise");
+			if (beamLevel5 == false) { // will only be true once
+				fire("beam", 3, "dir", "center", 999999, 0, 0, 0, 0, 0, "followClockwise");
+				fire("beam", 3, "dir", "center", 999999, 60, 0, 0, 0, 0, "followClockwise");
+				fire("beam", 3, "dir", "center", 999999, 120, 0, 0, 0, 0, "followClockwise");
+				fire("beam", 3, "dir", "center", 999999, 180, 0, 0, 0, 0, "followClockwise");
+				fire("beam", 3, "dir", "center", 999999, 240, 0, 0, 0, 0, "followClockwise");
+				fire("beam", 3, "dir", "center", 999999, 300, 0, 0, 0, 0, "followClockwise");
 				beamLevel5 = true;
 			}
 		}
@@ -364,4 +382,17 @@ void Player::fire(std::string className, double damage, std::string type, std::s
 	if (className == "beam") {
 		beams.push_back(std::make_unique<Beam>(window, "player", damage, type, spawnX, spawnY, 0, speedDuration, param1, param2, param3, param4, param5, preset, this));
 	}
+}
+
+double Player::getPreviousX() {
+	return previousX;
+}
+
+double Player::getPreviousY() {
+	return previousY;
+}
+
+void Player::storePreviousPosition() {
+	previousX = x;
+	previousY = y;
 }

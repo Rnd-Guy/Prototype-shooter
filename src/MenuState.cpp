@@ -1,5 +1,7 @@
 #include "MenuState.h"
 
+
+
 MenuState::MenuState(Game* gamePointer, sf::RenderWindow* window) {
 	this->gamePointer = gamePointer;
 	this->window = window;

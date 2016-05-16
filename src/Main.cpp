@@ -1,4 +1,9 @@
+
+
+
 #include "Game.h"
+
+
 
 //int main()
 //{
@@ -21,6 +26,5 @@ int main() {
 		game.update();
 		game.render();
 	}
-
 
 }

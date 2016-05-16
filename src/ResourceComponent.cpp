@@ -9,6 +9,7 @@
 // the "name" key should be the same as the name of the class
 void ResourceComponent::initialise(std::string name) {
 	if (initialised == true) {
+
 		return;
 	}
 

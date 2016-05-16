@@ -19,19 +19,19 @@ public:
 
 	// unfortunately cannot find a suitable overload with default parameters without overload ambiguity
 
-	// note this class can be used for actual bullets, but it's mostly designed to be a base class to be inherited from
+	// class originally intended to be a base class to be derived from, but is fully functional itself
 	Bullet(sf::RenderWindow* window,
 		std::string playerOrBoss,
 		double damage,
-		std::string type, // "direction" or "target"
+		std::string type,		//	"direction"					"target"
 		double spawnX,        
 		double spawnY,        
 		double spawnSpeed,    
-		double param1,        // direction or targetX
-		double param2 = 0,	  // directionOffset or targetY
-		double param3 = 0,    // 0 or targetXOffset
-		double param4 = 0,    // 0 or targetYOffset
-		double param5 = 0);	  // 0 or directionOffset
+		double param1,			// direction					targetX
+		double param2 = 0,		// directionOffset				targetY
+		double param3 = 0,		// 0							targetXOffset
+		double param4 = 0,		// 0							targetYOffset
+		double param5 = 0);		// 0							directionOffset
 
 	void calculatePath(std::string type, double speed, 
 		double param1, double param2=0,  

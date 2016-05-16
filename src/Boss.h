@@ -29,6 +29,10 @@ public:
 	void redShoot();
 	void blueShoot();
 	void yellowShoot();
+	// helper function to make spawning bullets/beams slightly easier (
+	void fire(std::string className, std::string type, double spawnX, double spawnY, double durationOrSpeed, double param1, double param2=0, double param3=0, double param4 = 0, double param5=0, double chargeTime=0, std::string preset="");
+	void fire(std::string className, std::string type, std::string spawn, double durationOrSpeed, double param1, double param2 = 0, double param3 = 0, double param4 = 0, double param5 = 0, double chargeTime=0, std::string preset = "");
+
 
 private:
 	Player* player;
