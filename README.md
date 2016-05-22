@@ -18,6 +18,7 @@ If you have visual studio 2015, it should be sufficient to download the reposito
 Arrow keys to move  
 Z key to shoot and select menu options  
 A key to toggle autofire  
+Shift key to show player's hitbox and slows down the player to perform precise movement
 Escape to pause/unpause
 
 #####Features:
@@ -29,25 +30,26 @@ Higher yellow power lets you shoot more laser beams,
 #####Feature progress:
 Feature | Description | Progress
 :---:|---|---
-Gamestates|Seperate the game state with the main menu and be able to switch between them freely|100%
 Pause|Be able to pause the game|100%
 Retry|Be able to start over|100%
-Player|Player sprites, lives, shooting, collisions and movement|90% 
-Boss|Boss sprites, life, shooting, collisions and possibly movement|80% 
-Powers|Red, yellow and blue powers for boss and player|66% 
+Player|Player sprites, lives, shooting, collisions and movement|100% 
+Boss|Boss sprites, life, shooting, collisions and possibly movement|100% 
+Powers|Red, yellow and blue powers for boss and player|100% 
 Bullets|Bullet mechanics and collisions|100%
 Beams|Laser beam mechanics and collisions|100%
-Blue power|Haven't come up with one yet|0%
+Blue power|Extra lives (may remake into a less boring power later)|100%
 
 #####To-do list:  
-Add blue power  
+Add better blue power (sometime later)  
 Add a game-over screen when the player runs out of lives  
+Add a victory screen  
 Fix bug where player lasers spawn off-center (most notable when firing whilst moving left or right)
 [Release .exe only] Find out why the pause menu doesn't display correctly (functions as normal however) despite no source code changes between debug and release  
 
 #####Changelog:
 Version | Description
 ---|---
+v0.3.1 | Added blue power which just gives extra lives. <br>Added shift button to slow down movement and reveal player hitbox.
 v0.3.0 | Rebalanced power levels and finished boss attacks.
 v0.2.1 | Added more lasers for yellow power level 3-5 and added some more boss attacks
 v0.2.0 | Reshuffled folders and project files to a more standard format.
