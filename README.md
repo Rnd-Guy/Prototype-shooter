@@ -18,7 +18,7 @@ If you have visual studio 2015, it should be sufficient to download the reposito
 Arrow keys to move  
 Z key to shoot and select menu options  
 A key to toggle autofire  
-Shift key to show player's hitbox and slows down the player to perform precise movement
+Shift key to show player's hitbox and slows down the player to perform precise movement  
 Escape to pause/unpause
 
 #####Features:
