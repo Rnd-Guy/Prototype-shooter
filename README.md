@@ -27,18 +27,6 @@ Higher red power lets you shoot more bullets,
 Higher yellow power lets you shoot more laser beams,  
 (Blue power does not do anything right now).  
 
-#####Feature progress:
-Feature | Description | Progress
-:---:|---|---
-Pause|Be able to pause the game|100%
-Retry|Be able to start over|100%
-Player|Player sprites, lives, shooting, collisions and movement|100% 
-Boss|Boss sprites, life, shooting, collisions and possibly movement|100% 
-Powers|Red, yellow and blue powers for boss and player|100% 
-Bullets|Bullet mechanics and collisions|100%
-Beams|Laser beam mechanics and collisions|100%
-Blue power|Extra lives (may remake into a less boring power later)|100%
-
 #####To-do list:  
 Add better blue power (sometime later)  
 Add a game-over screen when the player runs out of lives  
