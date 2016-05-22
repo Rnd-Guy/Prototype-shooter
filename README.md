@@ -23,9 +23,9 @@ Escape to pause/unpause
 
 #####Features:
 A red/yellow/blue power bar system where you get stronger depending on which part of the boss you shoot!  
-Higher red power lets you shoot more bullets,  
-Higher yellow power lets you shoot more laser beams,  
-(Blue power does not do anything right now).  
+Higher red power lets you shoot more bullets!  
+Higher yellow power lets you shoot more laser beams!  
+Levelling up blue power grants extra lives to survive longer!  
 
 #####To-do list:  
 Add better blue power (sometime later)  
