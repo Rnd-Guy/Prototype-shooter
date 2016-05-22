@@ -131,8 +131,10 @@
     <ClCompile Include="Beam.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="FirePattern.cpp" />
     <ClCompile Include="DegRadConversion.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuState.cpp" />
@@ -140,20 +142,24 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="ResourceComponent.cpp" />
+    <ClCompile Include="RNG.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicPlayerBullet.h" />
     <ClInclude Include="Beam.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="FirePattern.h" />
     <ClInclude Include="DegRadConversion.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="PausedState.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="ResourceComponent.h" />
+    <ClInclude Include="RNG.h" />
     <ClInclude Include="SFMLIncludes.h" />
   </ItemGroup>
   <ItemGroup>

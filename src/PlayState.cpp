@@ -3,10 +3,12 @@
 #include "Beam.h"
 
 PlayState::PlayState(Game* gamePointer, sf::RenderWindow* window) : 
+	// initialise references and classes with no default constructor
 	bullets(), 
 	beams(),
-	player(window, bullets, beams), // initialise player, as it has no default constructor
-	boss(window, bullets, beams, &player) 
+	firePattern(window, bullets, beams),
+	player(window, bullets, beams, &firePattern), 
+	boss(window, bullets, beams, &player, &firePattern)
 {
 	this->gamePointer = gamePointer;
 	this->window = window;
@@ -27,6 +29,8 @@ PlayState::PlayState(Game* gamePointer, sf::RenderWindow* window) :
 
 void PlayState::handleInput()
 {
+	// should delegate input to the player rather than managing input here
+
 	// event based input
 	sf::Event event;
 	while (window->pollEvent(event)) {
@@ -40,6 +44,10 @@ void PlayState::handleInput()
 			}
 			if (event.key.code == sf::Keyboard::A) {
 				player.autofire();
+			}
+			if (event.key.code == sf::Keyboard::D) {
+				player.debug();
+				boss.debug();
 			}
 			break;
 		
@@ -76,6 +84,11 @@ void PlayState::update()
 {
 	player.update();
 	boss.update();
+	firePattern.update();
+	for (auto i = 0; i < gameObjects.size(); ++i) {
+		gameObjects[i]->update();
+	}
+
 	// bullets 
 	for (auto i = 0; i < bullets.size(); ++i) {
 		bullets[i]->update();
@@ -197,6 +210,10 @@ void PlayState::render()
 	boss.render();
 	player.renderGame();
 
+	for (auto i = 0; i < gameObjects.size(); ++i) {
+		gameObjects[i]->render();
+	}
+
 	// overlay layer
 	window->draw(orangeOverlay);
 	player.renderOverlay();
@@ -222,6 +239,7 @@ void PlayState::changeGameState(Game::State newState) {
 void PlayState::reset() {
 	player.reset();
 	boss.reset();
+	firePattern.reset();
 	bullets.clear();
 	beams.clear();
 }

@@ -2,10 +2,11 @@
 #include "Player.h" // required to use player.getX() and player.getY()
 
 
-Boss::Boss(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &bulletVector, std::vector<std::unique_ptr<Beam> > &beamVector, Player* playerPointer) :
-	bullets(bulletVector), player(playerPointer), beams(beamVector) ,mt(rd()), randomDirection(0,359)
+Boss::Boss(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &bulletVector, std::vector<std::unique_ptr<Beam> > &beamVector, Player* playerPointer, FirePattern* firePattern) :
+	bullets(bulletVector), player(playerPointer), beams(beamVector) 
 {
 	this->window = window;
+	this->firePattern = firePattern;
 	reset();
 	resourceComponent.initialise("Boss");
 	blueRectangle.setTexture(*(resourceComponent.getTexture("blueRectangle")));
@@ -23,14 +24,14 @@ Boss::Boss(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &bull
 	blueTimer = 1;
 	yellowTimer = 1;
 
-	secondFormHP = 6666;
+	secondFormHP = 13000;
 
 }
 
 void Boss::reset() {
 	x = 20;
 	y = 50;
-	maxHP = 10000;
+	maxHP = 20000;
 	currentHP = maxHP;
 	// reset position
 	redLeftXOffset = 0;
@@ -43,6 +44,9 @@ void Boss::reset() {
 	yellowRightYOffset = 180;
 	blueXOffset = 130;
 	blueYOffset = 0;
+	redTimer = 1;
+	blueTimer = 1;
+	yellowTimer = 1;
 }
 
 void Boss::update() {
@@ -87,15 +91,33 @@ void Boss::render() {
 
 // may put specific colour mechanics here
 void Boss::damageBlue(double damageOfBullet) {
+	double previousHP = currentHP;
 	currentHP -= damageOfBullet;
+	if (previousHP > secondFormHP && currentHP <= secondFormHP) {
+		redTimer = 0;
+		blueTimer = 0;
+		yellowTimer = 0;
+	}
 }
 
 void Boss::damageRed(double damageOfBullet) {
+	double previousHP = currentHP;
 	currentHP -= damageOfBullet;
+	if (previousHP > secondFormHP && currentHP <= secondFormHP) {
+		redTimer = 0;
+		blueTimer = 0;
+		yellowTimer = 0;
+	}
 }
 
 void Boss::damageYellow(double damageOfBullet) {
+	double previousHP = currentHP;
 	currentHP -= damageOfBullet;
+	if (previousHP > secondFormHP && currentHP <= secondFormHP) {
+		redTimer = 0;
+		blueTimer = 0;
+		yellowTimer = 0;
+	}
 }
 
 sf::FloatRect Boss::getBlueHitBox() {
@@ -129,8 +151,8 @@ void Boss::redShoot() {
 		if (redTimer % 15 == 0) {
 			//bullets.push_back(std::make_unique<Bullet>(window, "Boss", 1, "direction", 100, 270, 5, randomDirection(mt)));
 			//bullets.push_back(std::make_unique<Bullet>(window, "Boss", 1, "direction", 500, 270, 5, randomDirection(mt)));
-			fire("bullet", "dir", "redLeft", 5, randomDirection(mt));
-			fire("bullet", "dir", "redRight", 5, randomDirection(mt));
+			fire("bullet", "dir", "redLeft", 5, RNG::randomDirection(RNG::mt));
+			fire("bullet", "dir", "redRight", 5, RNG::randomDirection(RNG::mt));
 
 
 			//bullets.push_back(std::make_unique<Bullet>(window, "Boss", 1, "target", 100, 270, 5, player->getX(), player->getY()));
@@ -166,7 +188,20 @@ void Boss::redShoot() {
 
 	}
 	else if (currentHP > 0) {
+		if (redTimer % 10 == 0) {
+			fire("bullet", "dir", "redLeft", 5, RNG::randomDirection(RNG::mt));
+			fire("bullet", "dir", "redRight", 5, RNG::randomDirection(RNG::mt));
+		}
 
+		if (redTimer % 2000 == 0) {
+			firePattern->add("bossWall");
+		}
+		if (redTimer % 2000 == 1000) {
+			firePattern->add("bossTripleSpam", player);
+		}
+		if (redTimer % 2000 == 1400) {
+			firePattern->add("bossSingleSpam", player);
+		}
 	}
 
 
@@ -208,7 +243,7 @@ void Boss::yellowShoot() {
 		}
 	}
 	else if (currentHP > 0) {
-		if (yellowTimer % 1800 == 0) {
+		if (yellowTimer % 2000 == 420) {
 			fire("beam", "dir", "yellowLeft", 350, 90, 0, 0, 0, 0, 100, "slowClockwise");
 			fire("beam", "dir", "yellowLeft", 350, 135, 0, 0, 0, 0, 100, "slowClockwise");
 			fire("beam", "dir", "yellowLeft", 350, 180, 0, 0, 0, 0, 100, "slowClockwise");
@@ -217,9 +252,9 @@ void Boss::yellowShoot() {
 			fire("beam", "dir", "yellowRight", 350, 90, 0, 0, 0, 0, 100, "slowClockwise");
 			fire("beam", "dir", "yellowRight", 350, 135, 0, 0, 0, 0, 100, "slowClockwise");
 			fire("beam", "dir", "yellowRight", 350, 180, 0, 0, 0, 0, 100, "slowClockwise");
-			fire("beam", "dir", "yellowRight", 350, 225, 0, 0, 0, 0, 100, "slowClockwise");
+			fire("beam", "dir", "yellowRight", 350, 245, 0, 0, 0, 0, 100, "slowClockwise"); // changed to remove a part where you cannot avoid getting hurt
 		}
-		if (yellowTimer % 1800 == 250) {
+		if (yellowTimer % 2000 == 670) {
 			fire("beam", "dir", "yellowLeft", 350, 135, 0, 0, 0, 0, 100, "slowAntiClockwise");
 			fire("beam", "dir", "yellowLeft", 350, 180, 0, 0, 0, 0, 100, "slowAntiClockwise");
 			fire("beam", "dir", "yellowLeft", 350, 225, 0, 0, 0, 0, 100, "slowAntiClockwise");
@@ -228,7 +263,7 @@ void Boss::yellowShoot() {
 			fire("beam", "dir", "yellowRight", 350, 135, 0, 0, 0, 0, 100, "slowAntiClockwise");
 			fire("beam", "dir", "yellowRight", 350, 180, 0, 0, 0, 0, 100, "slowAntiClockwise");
 			fire("beam", "dir", "yellowRight", 350, 225, 0, 0, 0, 0, 100, "slowAntiClockwise");
-			fire("beam", "dir", "yellowRight", 350, 270, 0, 0, 0, 0, 100, "slowAntiClockwise");
+			fire("beam", "dir", "yellowRight", 350, 290, 0, 0, 0, 0, 100, "slowAntiClockwise"); // changed to remove a part where you cannot avoid getting hurt
 		}
 	}
 
@@ -272,4 +307,20 @@ void Boss::fire(std::string className, std::string type, std::string spawn, doub
 	else if (className == "beam") {
 		beams.push_back(std::make_unique<Beam>(window, "Boss", 1, type, spawnX, spawnY, chargeTime, durationOrSpeed, param1, param2, param3, param4, param5, preset));
 	}
+}
+
+double Boss::getX() {
+	return 0;
+}
+
+double Boss::getY() {
+	return 0;
+}
+
+void Boss::debug() {
+	//currentHP = 6000;
+	//redTimer = 0;
+	//blueTimer = 0;
+	//yellowTimer = 0;
+	//return;
 }

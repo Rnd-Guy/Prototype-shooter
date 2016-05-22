@@ -1,20 +1,23 @@
 #pragma once
 
-#include <random> // for random shots
 #include <memory> // for smart pointers
 #include "Bullet.h"
 #include "ResourceComponent.h"
 #include "Beam.h"
+#include "GameObject.h"
+#include "FirePattern.h"
+#include "RNG.h"
 
 class Player; // needs to know player to be able to shoot directed bullets aimed at player
 
-class Boss {
+class Boss : public GameObject {
 public:
-	Boss(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &bulletVector, std::vector<std::unique_ptr<Beam> > &beamVector, Player* playerPointer);
+	Boss(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &bulletVector, std::vector<std::unique_ptr<Beam> > &beamVector, Player* playerPointer, FirePattern* firePattern);
 
 	void update();
 	void render();
 	void reset();
+	void debug();
 
 	void damageRed(double damageOfBullet);
 	void damageBlue(double damageOfBullet);
@@ -33,9 +36,11 @@ public:
 	void fire(std::string className, std::string type, double spawnX, double spawnY, double durationOrSpeed, double param1, double param2=0, double param3=0, double param4 = 0, double param5=0, double chargeTime=0, std::string preset="");
 	void fire(std::string className, std::string type, std::string spawn, double durationOrSpeed, double param1, double param2 = 0, double param3 = 0, double param4 = 0, double param5 = 0, double chargeTime=0, std::string preset = "");
 
-
+	double getX();
+	double getY();
 private:
 	Player* player;
+	FirePattern* firePattern;
 
 	double x;
 	double y;
@@ -64,6 +69,7 @@ private:
 	std::vector <std::unique_ptr<Bullet> > &bullets;
 	std::vector <std::unique_ptr<Beam> > &beams;
 	ResourceComponent resourceComponent;
+	
 
 	sf::Sprite blueRectangle;
 	sf::Sprite redLeftRectangle;
@@ -80,11 +86,4 @@ private:
 
 	sf::Sprite hpBorder;
 	sf::Sprite hpFill;
-
-	// random number generator
-	std::random_device rd;
-	std::mt19937 mt;
-	std::uniform_int_distribution<> randomDirection;
-
-
 };

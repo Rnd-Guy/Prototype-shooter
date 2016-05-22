@@ -4,11 +4,13 @@
 #include "Bullet.h"
 #include "ResourceComponent.h"
 #include "Beam.h"
+#include "GameObject.h"
+#include "FirePattern.h"
 
 
-class Player {
+class Player : public GameObject {
 public:
-	Player(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &bulletVector, std::vector<std::unique_ptr<Beam> > &beamVector);
+	Player(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &bulletVector, std::vector<std::unique_ptr<Beam> > &beamVector, FirePattern* firePattern);
 
 	void moveUp();
 	void moveDown();
@@ -30,7 +32,9 @@ public:
 	void update();
 	void renderGame();    // game elements like the player sprite
 	void renderOverlay();  // overlay elements like power bars
+	void render(); // temporary workaround
 	void reset();
+	void debug(); // used to test things
 
 	double getX();
 	double getY();
@@ -86,6 +90,7 @@ private:
 	double yellowExp;
 	double blueExp;
 	double redTimer;
+	double red5Timer; // timer for red lvl 5 attack
 	double blueTimer;
 	double yellowTimer;
 	std::vector<int> levelUpExp; // levelUpExp[i] is the exp required to lvl from i to i+1
@@ -93,4 +98,5 @@ private:
 
 	std::vector<std::unique_ptr<Bullet> > &bullets;
 	std::vector<std::unique_ptr<Beam> > &beams;
+	FirePattern* firePattern;
 };

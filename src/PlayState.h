@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Bullet.h"
 #include "Boss.h"
+#include "FirePattern.h"
 
 class PlayState : public GameState {
 public:
@@ -29,11 +30,12 @@ private:
 
 	Player player;
 	Boss boss;
+	std::vector<std::unique_ptr<GameObject> > gameObjects; // may be used in future when i have more entities (blue power?)
 	std::vector<std::unique_ptr<Bullet> > bullets; // this will be passed to the player and boss
 	sf::Sprite blackBackground;
 	sf::Sprite orangeOverlay;
 	std::vector<std::unique_ptr<Beam> > beams; // this will be passed to the player and boss
-
+	FirePattern firePattern;
 
 
 

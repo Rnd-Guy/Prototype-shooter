@@ -1,9 +1,10 @@
 #include "Player.h"
 
-Player::Player(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &bulletVector, std::vector<std::unique_ptr<Beam> > &beamVector) :
+Player::Player(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &bulletVector, std::vector<std::unique_ptr<Beam> > &beamVector, FirePattern* firePattern) :
 	bullets(bulletVector), beams(beamVector)
 {
 	this->window = window;
+	this->firePattern = firePattern;
 	resourceComponent.initialise("Player");
 
 	// set textures
@@ -70,7 +71,7 @@ Player::Player(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &
 	livesText.setPosition(610, 200);
 	
 
-	levelUpExp = { 0,50,120,400,1000,999999999 };
+	levelUpExp = { 0,100,400,2000,5000,999999999 };
 
 	reset();
 	playerSprite.setOrigin(10, 14);
@@ -89,7 +90,7 @@ void Player::reset() {
 	redExp = 0;
 	blueExp = 0;
 	yellowExp = 0;
-	redLevel = 1;
+	redLevel = 1; 
 	blueLevel = 1;
 	yellowLevel = 1;
 	lives = 4;
@@ -97,6 +98,7 @@ void Player::reset() {
 	playerSprite.setColor(sf::Color::White);
 
 	redTimer = 0;
+	red5Timer = 0;
 	blueTimer = 0;
 	yellowTimer = 0;
 	redLevelText.setString("1");
@@ -175,8 +177,10 @@ void Player::update() {
 
 	// shoot update
 	if (redTimer > 0) --redTimer;
+	if (red5Timer > 0) --red5Timer;
 	if (blueTimer > 0) --blueTimer;
 	if (yellowTimer > 0) --yellowTimer;
+
 	
 	rectHitbox = sf::FloatRect(x - hitBoxRadius, y - hitBoxRadius, (2 * hitBoxRadius) + 1, (2 * hitBoxRadius) + 1);
 }
@@ -290,9 +294,17 @@ void Player::redShoot() {
 
 
 		}
+		
 
 		redTimer = 10;
 	}
+	if (red5Timer == 0) {
+		if (redLevel == 5) {
+			firePattern->add("playerCircle", this);
+		}
+		red5Timer = 30;
+	}
+
 }
 
 void Player::blueShoot() {
@@ -395,4 +407,21 @@ double Player::getPreviousY() {
 void Player::storePreviousPosition() {
 	previousX = x;
 	previousY = y;
+}
+
+//void Player::render(std::string gameOrOverlay) {
+//	if (gameOrOverlay == "Game" || gameOrOverlay == "game" || gameOrOverlay == "") {
+//		renderGame();
+//	}
+//	if (gameOrOverlay == "Overlay" || gameOrOverlay == "overlay") {
+//		renderOverlay();
+//	}
+//}
+
+void Player::render() {
+	return;
+}
+
+void Player::debug() {
+	return;
 }

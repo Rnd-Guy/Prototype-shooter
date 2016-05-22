@@ -151,8 +151,8 @@ void Beam::generateHitboxes() {
 			hitboxSprites.back().setPosition(sf::Vector2f(hitboxPoints.back()[0], hitboxPoints.back()[1]));
 		}
 
-		currentX += hitboxXDistance;
-		currentY += hitboxYDistance;
+		currentX += 2*hitboxXDistance;
+		currentY += 2*hitboxYDistance;
 
 	}
 }
