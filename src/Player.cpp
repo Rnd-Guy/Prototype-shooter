@@ -20,6 +20,10 @@ Player::Player(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &
 	life2.setTexture(*(resourceComponent.getTexture("playerSprite")));
 	life3.setTexture(*(resourceComponent.getTexture("playerSprite")));
 	life4.setTexture(*(resourceComponent.getTexture("playerSprite")));
+	life5.setTexture(*(resourceComponent.getTexture("playerSprite")));
+	life6.setTexture(*(resourceComponent.getTexture("playerSprite")));
+	life7.setTexture(*(resourceComponent.getTexture("playerSprite")));
+	life8.setTexture(*(resourceComponent.getTexture("playerSprite")));
 
 	// set colour
 	playerSprite.setColor(sf::Color::White);
@@ -35,6 +39,10 @@ Player::Player(sf::RenderWindow* window, std::vector<std::unique_ptr<Bullet> > &
 	life2.setPosition(sf::Vector2f(660, 240));
 	life3.setPosition(sf::Vector2f(700, 240));
 	life4.setPosition(sf::Vector2f(740, 240));
+	life5.setPosition(sf::Vector2f(620, 270));
+	life6.setPosition(sf::Vector2f(660, 270));
+	life7.setPosition(sf::Vector2f(700, 270));
+	life8.setPosition(sf::Vector2f(740, 270));
 
 	// resize certain elements
 	//life1.setScale(0.5, 0.5);
@@ -107,28 +115,32 @@ void Player::reset() {
 }
 
 void Player::moveUp() {
-	y -= speed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) y -= speed/2;
+	else y -= speed;
 	if (y < 15) {
 		y = 15; // top of the screen
 	}
 }
 
 void Player::moveDown() {
-	y += speed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) y += speed/2;
+	else y += speed;
 	if (y > 585) {
 		y = 585; // bottom of the screen
 	}
 }
 
 void Player::moveLeft() {
-	x -= speed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) x -= speed/2;
+	else x -= speed;
 	if (x < 15) {
 		x = 15; // left of the screen
 	}
 }
 
 void Player::moveRight() {
-	x += speed;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) x += speed/2;
+	else x += speed;
 	if (x > 585) {
 		x = 585; // right of the screen
 	}
@@ -201,7 +213,7 @@ void Player::renderOverlay() {
 	window->draw(redPowerBorder);
 	window->draw(bluePowerBorder);
 	window->draw(yellowPowerBorder);
-	
+
 	window->draw(redLevelText);
 	window->draw(blueLevelText);
 	window->draw(yellowLevelText);
@@ -211,6 +223,10 @@ void Player::renderOverlay() {
 	if (lives >= 2) window->draw(life2);
 	if (lives >= 3) window->draw(life3);
 	if (lives >= 4) window->draw(life4);
+	if (lives >= 5)	window->draw(life5);
+	if (lives >= 6) window->draw(life6);
+	if (lives >= 7) window->draw(life7);
+	if (lives >= 8) window->draw(life8);
 }
 
 
@@ -244,8 +260,8 @@ void Player::shoot() {
 void Player::damaged(double damageOfBullet) {
 	if (invincibilityTimer == 0) {
 		--lives;
-		invincibilityTimer = 300;
-		playerSprite.setColor(sf::Color(255,255,255,128)); // set to slightly transparent
+		invincibilityTimer = 120;
+		playerSprite.setColor(sf::Color(255,255,255,50)); // set to very transparent
 	}
 }
 
@@ -308,7 +324,28 @@ void Player::redShoot() {
 }
 
 void Player::blueShoot() {
-	
+	// something boring for now: extra lives
+	// these static variables are only initialised once
+	static bool blueLevel2 = false;
+	static bool blueLevel3 = false;
+	static bool blueLevel4 = false;
+	static bool blueLevel5 = false;
+	if (blueLevel2 == false && blueLevel >= 2) {
+		++lives;
+		blueLevel2 = true;
+	}
+	if (blueLevel3 == false && blueLevel >= 3) {
+		++lives;
+		blueLevel3 = true;
+	}
+	if (blueLevel4 == false && blueLevel >= 4) {
+		++lives;
+		blueLevel4 = true;
+	}
+	if (blueLevel5 == false && blueLevel >= 5) {
+		++lives;
+		blueLevel5 = true;
+	}
 }
 
 void Player::yellowShoot() {

@@ -68,6 +68,10 @@ private:
 	sf::Sprite life2;
 	sf::Sprite life3;
 	sf::Sprite life4;
+	sf::Sprite life5;
+	sf::Sprite life6;
+	sf::Sprite life7;
+	sf::Sprite life8;
 	int invincibilityTimer;
 
 	sf::Sprite redPowerBorder;

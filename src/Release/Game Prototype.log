@@ -1,7 +1,59 @@
-﻿  Generating code
-  2 of 1160 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+﻿  BasicPlayerBullet.cpp
+  Beam.cpp
+Beam.cpp(146): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+Beam.cpp(146): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Beam.cpp(151): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Beam.cpp(172): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Beam.cpp(173): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Beam.cpp(174): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Beam.cpp(184): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+Beam.cpp(191): warning C4018: '<': signed/unsigned mismatch
+Beam.cpp(201): warning C4018: '<': signed/unsigned mismatch
+Beam.cpp(208): warning C4018: '>=': signed/unsigned mismatch
+Beam.cpp(231): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Boss.cpp
+Boss.cpp(54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Boss.cpp(55): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Boss.cpp(56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Boss.cpp(57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Boss.cpp(58): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Boss.cpp(66): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Bullet.cpp
+Bullet.cpp(127): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  FirePattern.cpp
+FirePattern.cpp(15): warning C4018: '<': signed/unsigned mismatch
+FirePattern.cpp(19): warning C4018: '<': signed/unsigned mismatch
+  Game.cpp
+  GameObject.cpp
+  GameState.cpp
+  Main.cpp
+  MenuState.cpp
+  PausedState.cpp
+  Player.cpp
+Player.cpp(172): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Player.cpp(173): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Player.cpp(175): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Player.cpp(176): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+Player.cpp(177): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Player.cpp(178): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+Player.cpp(179): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Player.cpp(180): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+Player.cpp(197): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  PlayState.cpp
+PlayState.cpp(88): warning C4018: '<': signed/unsigned mismatch
+PlayState.cpp(93): warning C4018: '<': signed/unsigned mismatch
+PlayState.cpp(140): warning C4018: '<': signed/unsigned mismatch
+PlayState.cpp(147): warning C4018: '<': signed/unsigned mismatch
+PlayState.cpp(187): warning C4018: '<': signed/unsigned mismatch
+PlayState.cpp(204): warning C4018: '<': signed/unsigned mismatch
+PlayState.cpp(207): warning C4018: '<': signed/unsigned mismatch
+PlayState.cpp(213): warning C4018: '<': signed/unsigned mismatch
+  ResourceComponent.cpp
+  RNG.cpp
+  Generating code
+  360 of 1350 functions (26.7%) were compiled, the rest were copied from previous compilation.
+    210 functions were new in current compilation
+    72 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Game Prototype.vcxproj -> C:\Users\Jack Ngo\Desktop\Coding\Visual Studio Projects\Game Prototype\\build-Release\Game Prototype.exe
   Game Prototype.vcxproj -> C:\Users\Jack Ngo\Desktop\Coding\Visual Studio Projects\Game Prototype\\build-Release\Game Prototype.pdb (Full PDB)

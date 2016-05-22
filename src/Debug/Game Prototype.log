@@ -1,9 +1,12 @@
-﻿  Boss.cpp
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\boss.cpp(54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\boss.cpp(55): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\boss.cpp(56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\boss.cpp(57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\boss.cpp(58): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\boss.cpp(66): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+﻿  Player.cpp
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(172): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(173): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(175): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(176): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(177): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(178): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(179): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(180): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(197): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Game Prototype.vcxproj -> C:\Users\Jack Ngo\Desktop\Coding\Visual Studio Projects\Game Prototype\\build-Debug\Game Prototype.exe
   Game Prototype.vcxproj -> C:\Users\Jack Ngo\Desktop\Coding\Visual Studio Projects\Game Prototype\\build-Debug\Game Prototype.pdb (Partial PDB)
