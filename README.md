@@ -31,6 +31,7 @@ Levelling up blue power grants extra lives to survive longer!
 Add better blue power (sometime later)  
 Add a game-over screen when the player runs out of lives  
 Add a victory screen  
+Maybe refactor code, especially for class "PlayState" which is responsible for most of the gameplay related elements
 Fix bug where player lasers spawn off-center (most notable when firing whilst moving left or right)
 [Release .exe only] Find out why the pause menu doesn't display correctly (functions as normal however) despite no source code changes between debug and release  
 
