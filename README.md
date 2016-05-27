@@ -32,8 +32,9 @@ Add better blue power (sometime later)
 Add a game-over screen when the player runs out of lives  
 Add a victory screen  
 Maybe refactor certain classes and optimise others. Most notably the "beam" class, as this class can cause a lot of lag  
-Fix bug where player lasers spawn off-center (most notable when firing whilst moving left or right)
-[Release .exe only] Find out why the pause menu doesn't display correctly (functions as normal however) despite no source code changes between debug and release  
+Fix bug where player lasers spawn off-center (most notable when firing whilst moving left or right)  
+[Debug build only] Find out why the program doesn't close properly after returning from main  
+[Release build only] Find out why the pause menu doesn't display correctly (functions as normal however) despite no source code changes between debug and release  
 
 #####Changelog:
 Version | Description
