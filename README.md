@@ -4,7 +4,8 @@ Currently in development.
 Created using visual studio 2015 and SFML 2.3.2. (http://www.sfml-dev.org/)  
 
 #####Compiling:  
-If you have visual studio 2015, it should be sufficient to download the repository and load up the solution file (.sln)
+If you have visual studio 2015, it should be sufficient to download the repository and load up the solution file (.sln)  
+(As of v0.4.0 use of "__declspec(noinline)" means code will only compile with visual studio)  
 
 #####Folders:
 -build-debug: Where the debug .exe can be found  
@@ -29,16 +30,16 @@ Levelling up blue power grants extra lives to survive longer!
 
 #####To-do list:  
 Add better blue power (sometime later)  
-Add a game-over screen when the player runs out of lives  
-Add a victory screen  
+Add better victory/defeat screens  
 Maybe refactor certain classes and optimise others. Most notably the "beam" class, as this class can cause a lot of lag  
 Fix bug where player lasers spawn off-center (most notable when firing whilst moving left or right)  
 [Debug build only] Find out why the program doesn't close properly after returning from main  
-[Release build only] Find out why the pause menu doesn't display correctly (functions as normal however) despite no source code changes between debug and release  
+[Release build only] [May be fixed as of v0.4.0] Find out why the pause menu doesn't display correctly (functions as normal however) despite no source code changes between debug and release   
 
 #####Changelog:
 Version | Description
 ---|---
+v0.4.0 | Added very temporary victory/defeat screens. Possible bug fix for release build pause menu.
 v0.3.1 | Added blue power which just gives extra lives. <br>Added shift button to slow down movement and reveal player hitbox.
 v0.3.0 | Rebalanced power levels and finished boss attacks.
 v0.2.1 | Added more lasers for yellow power level 3-5 and added some more boss attacks
