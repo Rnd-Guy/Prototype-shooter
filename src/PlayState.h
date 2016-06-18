@@ -20,6 +20,11 @@ public:
 
 	void reset();
 
+	//test functions
+	Player* getPlayer();
+	Boss* getBoss();
+	std::vector<std::unique_ptr<Bullet> > &getBullets();
+	std::vector<std::unique_ptr<Beam> > &getBeam();
 
 
 private:

@@ -158,7 +158,7 @@ void FirePattern::FirePatternInfo::update() {
 		}
 	}
 
-	// bossTripleSpam - shoots multiple triple shots aimed at the player
+	// bossTripleSpam - shoots multiple triple shots aimed at the player (not very readable)
 	if (pattern == "bossTripleSpam") {		
 		// objectPointer points to the player
 		finalCounter = 300;
@@ -171,6 +171,15 @@ void FirePattern::FirePatternInfo::update() {
 				fire("bullet", "boss", 1, "target", "redRight", 5, objectPointer->getX(), objectPointer->getY(), 0, 0, 30);
 				fire("bullet", "boss", 1, "target", "redRight", 5, objectPointer->getX(), objectPointer->getY(), 0, 0, -30);
 			}
+		}
+	}
+
+	//bossRandomSpam
+	if (pattern == "bossRandomSpam") {
+		finalCounter = 300;
+		if (counter % 2 == 0) {
+			fire("bullet", "boss", 1, "dir", "redLeft", 3, RNG::randomDirection(RNG::mt));
+			fire("bullet", "boss", 1, "dir", "redRight", 3, RNG::randomDirection(RNG::mt));
 		}
 	}
 

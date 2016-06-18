@@ -1,8 +1,11 @@
 #include "Game.h"
 #include "GameState.h"
+// the following includes are required to avoid cyclic inclusion
 #include "MenuState.h"
 #include "PlayState.h"
 #include "PausedState.h"
+#include "VictoryState.h"
+#include "DefeatState.h"
 
 
 
@@ -21,16 +24,19 @@ Game::Game(sf::RenderWindow* window) {
 void Game::initialise() {
 	currentGameState = menu;
 	gameRunning = true;
+
 	gameStateVector.push_back(std::make_shared<MenuState>(this, window));
 	gameStateVector.push_back(std::make_shared<PlayState>(this, window));
 	gameStateVector.push_back(std::make_shared<PausedState>(this, window, gameStateVector[1]));
-
+	gameStateVector.push_back(std::make_shared<VictoryState>(this, window));
+	gameStateVector.push_back(std::make_shared<DefeatState>(this, window));
 
 }
 
 
 void Game::changeState(State newState) {
 	if (newState == end) {
+		currentGameState = newState;
 		terminate();
 		return;
 	}
@@ -58,7 +64,6 @@ void Game::update() {
 void Game::render() {
 	if (currentGameState != end) {
 
-
 		window->clear();
 		gameStateVector[currentGameState]->render();
 		window->display();
@@ -67,10 +72,10 @@ void Game::render() {
 
 void Game::terminate() {
 	gameRunning = false;
-	for (auto i = 0; i < 3; ++i) {
+	for (auto i = 0; i < gameStateVector.size(); ++i) {
 		(*gameStateVector[i]).terminate();
 	}
-		
+	gameStateVector.empty();
 	window->close();
 	
 }

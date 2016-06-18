@@ -75,13 +75,13 @@ void PausedState::update() {
 }
 
 
-void PausedState::render() {
-
+__declspec(noinline) void PausedState::render() {
+//void PausedState::render() {
 	playStatePointer->render(); // draw play area in the background
+
 	window->draw(greyTint);
 	window->draw(pauseMenu);
 	window->draw(selectionRectangle);
-	
 }
 
 void PausedState::enter(std::string string) {

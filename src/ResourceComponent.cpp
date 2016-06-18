@@ -4,8 +4,9 @@
 //   will be done here to keep resource related things centralised
 
 // Template for adding new resources:
+//if (name == "ClassName") {
 //    load("key", "file location");
-
+//}
 // the "name" key should be the same as the name of the class
 void ResourceComponent::initialise(std::string name) {
 	if (initialised == true) {
@@ -27,6 +28,8 @@ void ResourceComponent::initialise(std::string name) {
 		load("greyTint", "../res/Grey Tint.png");
 		load("pauseMenu", "../res/Pause Menu.png");
 		load("selectionRectangle", "../res/Pause Selection.png");
+		load("blackBackground", "../res/Black Background.png");
+		load("orangeOverlay", "../res/Orange overlay.png");
 
 	}
 
@@ -56,6 +59,14 @@ void ResourceComponent::initialise(std::string name) {
 		load("beamEnd", "../res/Beam End.png");
 		load("beamCharging", "../res/Beam Charging.png");
 		load("beamHitbox", "../res/Beam Hitbox.png");
+	}
+
+	if (name == "VictoryState") {
+		load("victoryScreen", "../res/Victory Screen.png");
+	}
+
+	if (name == "DefeatState") {
+		load("defeatScreen", "../res/Defeat Screen.png");
 	}
 
 	initialised = true;

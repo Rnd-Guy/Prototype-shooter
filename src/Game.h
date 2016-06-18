@@ -14,7 +14,9 @@ public:
 		menu = 0,
 		play = 1,
 		pause = 2,
-		end = 3
+		victory = 3,
+		defeat = 4,
+		end = 100 // always keep end as the last state to avoid gameStateVector out-of-bounds
 	};
 
 	void initialise();

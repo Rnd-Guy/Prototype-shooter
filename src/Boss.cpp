@@ -197,7 +197,8 @@ void Boss::redShoot() {
 			firePattern->add("bossWall");
 		}
 		if (redTimer % 2000 == 1000) {
-			firePattern->add("bossTripleSpam", player);
+			//firePattern->add("bossTripleSpam", player);
+			firePattern->add("bossRandomSpam");
 		}
 		if (redTimer % 2000 == 1400) {
 			firePattern->add("bossSingleSpam", player);
@@ -323,4 +324,8 @@ void Boss::debug() {
 	//blueTimer = 0;
 	//yellowTimer = 0;
 	//return;
+}
+
+double Boss::getCurrentHP() {
+	return currentHP;
 }

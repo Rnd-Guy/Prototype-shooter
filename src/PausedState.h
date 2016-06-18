@@ -3,6 +3,10 @@
 #include "GameState.h"
 #include "ResourceComponent.h"
 #include <memory>
+#include "Bullet.h"
+#include "Beam.h"
+#include "Player.h"
+#include "Boss.h"
 
 class PlayState;
 
@@ -27,4 +31,5 @@ private:
 	sf::Sprite greyTint;
 	sf::Sprite selectionRectangle;
 	sf::Sprite pauseMenu;
+
 };

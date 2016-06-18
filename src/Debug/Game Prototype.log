@@ -1,12 +1,16 @@
-﻿  Player.cpp
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(172): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(173): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(175): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(176): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(177): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(178): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(179): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(180): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\player.cpp(197): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+﻿  PlayState.cpp
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\playstate.cpp(88): warning C4018: '<': signed/unsigned mismatch
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\playstate.cpp(93): warning C4018: '<': signed/unsigned mismatch
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\playstate.cpp(140): warning C4018: '<': signed/unsigned mismatch
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\playstate.cpp(147): warning C4018: '<': signed/unsigned mismatch
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\playstate.cpp(187): warning C4018: '<': signed/unsigned mismatch
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\playstate.cpp(213): warning C4018: '<': signed/unsigned mismatch
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\playstate.cpp(216): warning C4018: '<': signed/unsigned mismatch
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\playstate.cpp(223): warning C4018: '<': signed/unsigned mismatch
+  PausedState.cpp
+  FirePattern.cpp
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\firepattern.cpp(15): warning C4018: '<': signed/unsigned mismatch
+c:\users\jack ngo\desktop\coding\visual studio projects\game prototype\src\firepattern.cpp(19): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   Game Prototype.vcxproj -> C:\Users\Jack Ngo\Desktop\Coding\Visual Studio Projects\Game Prototype\\build-Debug\Game Prototype.exe
   Game Prototype.vcxproj -> C:\Users\Jack Ngo\Desktop\Coding\Visual Studio Projects\Game Prototype\\build-Debug\Game Prototype.pdb (Partial PDB)

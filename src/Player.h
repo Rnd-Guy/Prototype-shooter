@@ -43,6 +43,7 @@ public:
 	void storePreviousPosition(); // update previousX and previousY
 	double getHitBoxRadius();
 	sf::FloatRect getRectHitbox();
+	int getLives();
 
 	void damaged(double damageOfBullet);   // takes a bullet D:
 	void damageBlue(double damageOfBullet); // damages boss blue

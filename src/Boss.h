@@ -38,6 +38,8 @@ public:
 
 	double getX();
 	double getY();
+
+	double getCurrentHP();
 private:
 	Player* player;
 	FirePattern* firePattern;

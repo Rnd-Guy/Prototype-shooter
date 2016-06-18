@@ -1,17 +1,13 @@
 
 
-
+// #include <vld.h> //(visual leak detector, used to check for memory leaks)
 #include "Game.h"
+#include <Windows.h>
 
-
-
-//int main()
-//{
-//	startGame(); // Go to game loop
-//
-//	return 0;
-//}
-
+// windows application
+//int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+//	LPSTR lpCmdLine, int nCmdShow) {
+// console application
 int main() {
 	
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Game Prototype");
@@ -26,5 +22,4 @@ int main() {
 		game.update();
 		game.render();
 	}
-
 }

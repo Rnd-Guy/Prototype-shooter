@@ -462,3 +462,7 @@ void Player::render() {
 void Player::debug() {
 	return;
 }
+
+int Player::getLives() {
+	return lives;
+}

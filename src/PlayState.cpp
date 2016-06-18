@@ -191,11 +191,20 @@ void PlayState::update()
 	}
 
 
+	// check if boss is dead
+	if (boss.getCurrentHP() <= 0) {
+		changeGameState(Game::victory);
+	}
 
+	// check if player is dead
+	if (player.getLives() < 0) { 
+		changeGameState(Game::defeat);
+	}
 
 }
 
 
+//__declspec(noinline) void PlayState::render() // testing if this causes pause menu to not show up
 void PlayState::render()
 {
 
@@ -210,6 +219,7 @@ void PlayState::render()
 	boss.render();
 	player.renderGame();
 
+	// currently gameObjects doesn't actually do anything
 	for (auto i = 0; i < gameObjects.size(); ++i) {
 		gameObjects[i]->render();
 	}
@@ -242,6 +252,26 @@ void PlayState::reset() {
 	firePattern.reset();
 	bullets.clear();
 	beams.clear();
+}
+
+Player * PlayState::getPlayer()
+{
+	return &player;
+}
+
+Boss * PlayState::getBoss()
+{
+	return &boss;
+}
+
+std::vector<std::unique_ptr<Bullet>>& PlayState::getBullets()
+{
+	return bullets;
+}
+
+std::vector<std::unique_ptr<Beam>>& PlayState::getBeam()
+{
+	return beams;
 }
 
 void PlayState::terminate() {
